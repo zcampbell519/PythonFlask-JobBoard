@@ -10,7 +10,7 @@
     <div class="card-content">
       <div class="content">
           <p>
-              {{job['employer_name']}}<br/>
+              <a href="{{ url_for('employer',employer_id=job['employer_id'])}}">{{job['employer_name']}}<br/></a>
               ${{job['salary']}}<br/>
               {{job['description']}}
           </p>

@@ -40,3 +40,9 @@ def jobs():
 def job(job_id):
     job=execute_sql('SELECT job.id, job.title, job.description, job.salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id WHERE job.id = ?',[job_id],single=True)
     return render_template('job.html',job=job)
+
+@app.route('/employer/<employer_id>')
+def employer(employer_id):
+    employer=execute_sql('SELECT * from employer where id=?',[employer_id],single=True)
+    reviews=execute_sql('SELECT review, rating, title, date, status from review join employer on employer.id = review.employer_id where employer.id = ?',[employer_id])
+    return render_template('employer.html',employer=employer, reviews=reviews)
