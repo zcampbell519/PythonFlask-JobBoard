@@ -1,4 +1,5 @@
 <!-- templates/layout.html -->
+{% from '_macros.html' import show_job, show_jobs with context %}
 <!doctype html>
 <html>
   <head>
@@ -16,16 +17,3 @@
     </div>
   </body>
 </html>
-
-<!-- templates/_marcos.html -->
-<!-- show_job -->
-<div class="card adjust-height">
-  <header class="card-header">
-    <p class="card-header-title">
-    </p>
-  </header>
-  <div class="card-content">
-    <div class="content">
-    </div>
-  </div>
-</div>
